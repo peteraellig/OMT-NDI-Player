@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject>OMTplay.Program</StartupObject>
+    <ApplicationIcon>OMTplay.ico</ApplicationIcon>
+    <PlatformTarget>x64</PlatformTarget>
+    <Title>OMTplay</Title>
+    <Version>1.1.0.3</Version>
+    <Authors>Peter Aellig; Nicos Manadis</Authors>
+    <Company>Peter Aellig / Nicos Manadis</Company>
+    <Copyright>(GPL) Peter Aellig / Nicos Manadis</Copyright>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="third_party\ndi\Processing.NDI.Lib.x64.dll" Link="Processing.NDI.Lib.x64.dll" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="Always" />
+    <None Update="third_party\ndi\*.txt;third_party\ndi\*.pdf" Link="licenses\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="Always" />
+    <None Update="third_party\omt\LICENSE.txt" Link="licenses\OMT-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="Always" />
+    <Content Include="OMTplay.ico" />
+  </ItemGroup>
+
+<ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="libomtnet">
+      <HintPath>third_party\omt\bin\libomtnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="third_party\omt\bin\libomt.dll" Link="libomt.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </None>
+    <None Update="third_party\omt\bin\libvmx.dll" Link="libvmx.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

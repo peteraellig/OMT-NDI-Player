@@ -1,0 +1,146 @@
+﻿namespace OMTplay;
+
+#nullable enable
+partial class Setting
+{
+    private System.ComponentModel.IContainer? components;
+    private CheckBox _chkStartFullscreen = null!;
+    private NumericUpDown sourceNumber = null!;
+    private CheckBox apiEnabled = null!;
+    private NumericUpDown apiPort = null!;
+    private TextBox apiPassword = null!;
+    private CheckBox showApiPassword = null!;
+    private Button apiHelpButton = null!;
+    private ComboBox omtQuality = null!;
+    private ComboBox ndiBandwidth = null!;
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing) components?.Dispose();
+        base.Dispose(disposing);
+    }
+
+    private void InitializeComponent()
+    {
+        components = new System.ComponentModel.Container();
+        var resources = new System.ComponentModel.ComponentResourceManager(typeof(Setting));
+        _chkStartFullscreen = new CheckBox();
+        sourceNumber = new NumericUpDown();
+        apiEnabled = new CheckBox();
+        apiPort = new NumericUpDown();
+        apiPassword = new TextBox();
+        showApiPassword = new CheckBox();
+        apiHelpButton = new Button();
+        omtQuality = new ComboBox();
+        ndiBandwidth = new ComboBox();
+        var omtQualityLabel = new Label();
+        var ndiBandwidthLabel = new Label();
+        var qualityHelp = new Label();
+        var passwordLabel = new Label();
+        var apiPortLabel = new Label();
+        var apiHelp = new Label();
+        var sourceLabel = new Label();
+        var help = new Label();
+        var save = new Button();
+        var close = new Button();
+        SuspendLayout();
+        _chkStartFullscreen.Location = new Point(24, 22);
+        _chkStartFullscreen.Size = new Size(280, 24);
+        _chkStartFullscreen.Text = "Start fullscreen / connect automatically";
+        _chkStartFullscreen.TabIndex = 0;
+        sourceLabel.Location = new Point(24, 61);
+        sourceLabel.Size = new Size(110, 23);
+        sourceLabel.Text = "Start source:";
+        sourceNumber.Location = new Point(139, 58);
+        sourceNumber.Size = new Size(75, 23);
+        sourceNumber.Minimum = 1;
+        sourceNumber.Maximum = 9999;
+        sourceNumber.TabIndex = 1;
+        help.Location = new Point(24, 99);
+        help.Size = new Size(445, 82);
+        help.Text = "Source number in the source list (starting at 1).\r\n\r\nN: next source    P: previous source\r\nF: fullscreen on/off    Esc: leave fullscreen";
+        apiEnabled.Location = new Point(24, 190);
+        apiEnabled.Size = new Size(170, 24);
+        apiEnabled.Text = "API enabled (network)";
+        apiEnabled.TabIndex = 2;
+        apiPortLabel.Location = new Point(220, 192);
+        apiPortLabel.Size = new Size(45, 24);
+        apiPortLabel.Text = "Port:";
+        apiPort.Location = new Point(270, 190);
+        apiPort.Size = new Size(90, 23);
+        apiPort.Minimum = 1;
+        apiPort.Maximum = 65535;
+        apiPort.Value = 25901;
+        apiPort.TabIndex = 3;
+        passwordLabel.Location = new Point(24, 227);
+        passwordLabel.Size = new Size(110, 24);
+        passwordLabel.Text = "API password:";
+        apiPassword.Location = new Point(139, 224);
+        apiPassword.Size = new Size(221, 23);
+        apiPassword.UseSystemPasswordChar = true;
+        apiPassword.TabIndex = 4;
+        showApiPassword.Location = new Point(370, 224);
+        showApiPassword.Size = new Size(100, 24);
+        showApiPassword.Text = "Show";
+        showApiPassword.TabIndex = 5;
+        showApiPassword.CheckedChanged += ShowApiPasswordChanged;
+        apiHelp.Location = new Point(24, 260);
+        apiHelp.Size = new Size(445, 65);
+        apiHelp.Text = "http://<PC-IP>:<Port>/api/?Function=next&Password=...\r\nprev | next | fullOn | fullOFF | connect\r\nEmpty password = no password required.";
+        omtQualityLabel.Location = new Point(24, 337);
+        omtQualityLabel.Size = new Size(175, 24);
+        omtQualityLabel.Text = "OMT quality preference:";
+        omtQuality.Location = new Point(210, 334);
+        omtQuality.Size = new Size(259, 23);
+        omtQuality.DropDownStyle = ComboBoxStyle.DropDownList;
+        omtQuality.Items.AddRange(new object[] { "Default (sender / other receivers)", "Low", "Medium", "High" });
+        omtQuality.TabIndex = 6;
+        ndiBandwidthLabel.Location = new Point(24, 372);
+        ndiBandwidthLabel.Size = new Size(175, 24);
+        ndiBandwidthLabel.Text = "NDI receive bandwidth:";
+        ndiBandwidth.Location = new Point(210, 369);
+        ndiBandwidth.Size = new Size(259, 23);
+        ndiBandwidth.DropDownStyle = ComboBoxStyle.DropDownList;
+        ndiBandwidth.Items.AddRange(new object[] { "Highest (full resolution)", "Lowest (reduced resolution)" });
+        ndiBandwidth.TabIndex = 7;
+        qualityHelp.Location = new Point(24, 406);
+        qualityHelp.Size = new Size(445, 76);
+        qualityHelp.Text = "Video settings apply on the next connection.\r\nOMT: a fixed sender quality overrides this preference.\r\nWith an automatic sender, the highest receiver preference wins.\r\nNDI: reduced bandwidth lowers video resolution/quality.";
+        save.Location = new Point(304, 495);
+        apiHelpButton.Location = new Point(24, 495);
+        apiHelpButton.Size = new Size(110, 32);
+        apiHelpButton.Text = "API Help";
+        apiHelpButton.TabIndex = 8;
+        apiHelpButton.Click += ShowApiHelp;
+        save.Size = new Size(75, 32);
+        save.Text = "SAVE";
+        save.BackColor = Color.LightGreen;
+        save.TabIndex = 9;
+        save.Click += SaveSettings;
+        close.Location = new Point(389, 495);
+        close.Size = new Size(80, 32);
+        close.Text = "CANCEL";
+        close.BackColor = Color.IndianRed;
+        close.ForeColor = Color.White;
+        close.TabIndex = 10;
+        close.DialogResult = DialogResult.Cancel;
+        AcceptButton = save;
+        CancelButton = close;
+        AutoScaleDimensions = new SizeF(7, 15);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(493, 547);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        MaximizeBox = false;
+        MinimizeBox = false;
+        StartPosition = FormStartPosition.CenterParent;
+        Text = "program settings";
+        Icon = (Icon?)resources.GetObject("$this.Icon");
+        Controls.AddRange(new System.Windows.Forms.Control[] { _chkStartFullscreen, sourceLabel, sourceNumber, help, save, close });
+        Controls.AddRange(new System.Windows.Forms.Control[] { apiEnabled, apiPortLabel, apiPort, apiHelp });
+        Controls.AddRange(new System.Windows.Forms.Control[] { passwordLabel, apiPassword, showApiPassword });
+        Controls.Add(apiHelpButton);
+        Controls.AddRange(new System.Windows.Forms.Control[] { omtQualityLabel, omtQuality, ndiBandwidthLabel, ndiBandwidth, qualityHelp });
+        Load += Settings_Load;
+        ResumeLayout(false);
+    }
+}

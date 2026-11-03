@@ -1,0 +1,10 @@
+bin/
+bin-*/
+obj/
+.vs/
+*.user
+*.suo
+artifacts/
+
+!**/third_party/omt/bin/
+!**/third_party/omt/bin/**
