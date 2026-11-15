@@ -182,7 +182,7 @@ namespace OMTplay
         // --- Connection: Form load, OMT discovery initialization ---
         private async void Form1_Load(object? sender, EventArgs e)
         {
-            Text = $"OMTplay {Application.ProductVersion.Split('+')[0]}  - Peter Aellig";
+            Text = $"OMTplay {Application.ProductVersion.Split('+')[0]}  - Peter Aellig - MIT License";
             _btnDisconnect.Visible = false;
             label2.Text = Properties.Settings.Default.StartFullscreen ? "Fullscreenmode active" : "Fullscreenmode OFF";
             _autoConnectPending = Properties.Settings.Default.StartFullscreen;

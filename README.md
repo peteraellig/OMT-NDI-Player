@@ -1,6 +1,8 @@
-# OMT / NDI Player
+# OMT / NDI Player — MIT License
 
 A Windows desktop player for **Open Media Transport (OMT)** and **NDI** sources, built with C# and Windows Forms. The executable is named **OMTplay**.
+
+OMT / NDI Player is licensed under the [MIT License](LICENSE).
 
 ![OMT / NDI Player screenshot](OMTplay/omtplay.png)
 
@@ -96,9 +98,16 @@ Install **Inno Setup 7**, then run:
 
 The script publishes a self-contained x64 application and builds `artifacts/installer/OMTplay-1.1.0.3-Setup-x64.exe`. It prints the SHA-256 checksum. An alternative compiler path can be supplied through `-InnoCompiler`.
 
+## License
+
+The OMT / NDI Player application source code is released under the [MIT License](LICENSE).
+Copyright (c) 2026 Peter Aellig / Nicos Manadis.
+
+Third-party components retain their own licenses, as listed below. The application's MIT license does not replace those terms.
+
 ## Credits and third-party notices
 
-Application credits: **Peter Aellig / Nicos Manadis**. Existing application copyright metadata is retained.
+Application credits: **Peter Aellig / Nicos Manadis**.
 
 - [Open Media Transport](https://www.openmediatransport.org/): [MIT license](OMTplay/third_party/omt/LICENSE.txt).
 - [NDI](https://ndi.video/): NDI is a registered trademark of Vizrt NDI AB. NDI components are distributed under their own [SDK license agreement](OMTplay/third_party/ndi/NDI%20SDK%20License%20Agreement.pdf) and [third-party notices](OMTplay/third_party/ndi/Processing.NDI.Lib.Licenses.txt).

@@ -13,11 +13,13 @@
     <Version>1.1.0.3</Version>
     <Authors>Peter Aellig; Nicos Manadis</Authors>
     <Company>Peter Aellig / Nicos Manadis</Company>
-    <Copyright>(GPL) Peter Aellig / Nicos Manadis</Copyright>
+    <Copyright>Copyright (c) 2026 Peter Aellig / Nicos Manadis</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\LICENSE" Link="licenses\OMTplay-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="Always" />
     <None Update="third_party\ndi\Processing.NDI.Lib.x64.dll" Link="Processing.NDI.Lib.x64.dll" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="Always" />
     <None Update="third_party\ndi\*.txt;third_party\ndi\*.pdf" Link="licenses\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="Always" />
     <None Update="third_party\omt\LICENSE.txt" Link="licenses\OMT-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="Always" />
